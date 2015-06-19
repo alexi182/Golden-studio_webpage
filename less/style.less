@@ -1,0 +1,256 @@
+/*Общее*/
+
+html {
+	height: 100%;
+}
+
+*{
+	margin: 0;
+	padding: 0; 
+	border: 0;
+	list-style: none;
+}
+
+.clear {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+body{
+	height: 100%;
+	background-color: #232323;
+}
+
+a{
+	text-decoration: none;
+}
+a:active{
+	border: none;
+}
+
+/*Общие стили */
+.wrapper {
+	width: @content-width;
+	margin: 0 auto;
+}
+
+.block {
+	padding: 120px 0;
+    text-align: center;
+}
+
+/*Шрифты*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+
+/*Переменные*/
+
+@content-width: 940px;
+@font-montserrat: 'Montserrat', sans-serif;
+
+
+/*Mixins*/
+.button-style (@width, @height, @color, @background-color){
+	width: @width;
+	height: @height;
+	color: @color;
+	background-color:  @background-color;
+}
+
+.button-radius (@radius:3px){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.box-shadow {
+	-webkit-box-shadow: 0px 1px 5px 7px rgba(0,0,0,0.67);
+	-moz-box-shadow: 0px 1px 5px 7px rgba(0,0,0,0.67);
+	box-shadow: 0px 1px 5px 7px rgba(0,0,0,0.67);
+}
+
+/*Шапка*/
+.header {
+	position: absolute;
+	top: 41px;
+	width: 100%;
+	
+};
+
+/*Меню*/
+
+.menu {
+	float: right;
+	padding-top: 9px;
+}
+.menu:after {
+	 .clear
+}
+
+.menu_item {
+	font-family: @font-montserrat;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.menu_link {
+	display: inline;
+	padding-left: 40px;
+}
+
+.menu_link:first-child {
+	padding-left: 0;
+}
+
+.menu_link_item {
+	color: #fff;
+}
+
+.menu_link_item:hover {
+	opacity: 0.5; 
+}
+
+/*Фоновое изображение*/
+.home {
+	background: url(../images/background-top.jpg) no-repeat center bottom;
+	background-size: cover;
+	height: 700px;	
+	color: #fff;
+	text-align: center;
+}
+
+.headline {
+	padding-top: 270px;
+	font: 40px Droid serif;
+	margin-bottom: 20px;
+}
+
+.headline_item {
+	margin-bottom: 40px;
+	font: bold 75px @font-montserrat; 
+	text-transform: uppercase;
+	
+}
+
+.button {
+	.button-style (235px, 63px, #fff, #fed136);
+	.button-radius;
+	text-transform: uppercase;
+	cursor: pointer;
+	font: bold 18px @font-montserrat;
+}
+
+.button:hover {
+	border: 1px solid #FFDE29;
+	color: #FFDE29;
+	transition: all 0.3s ease 0s;
+	background: transparent none repeat scroll 0 0;
+}
+
+/*Service*/
+
+.services {
+	background-color: #fff;
+}
+
+.sub_title {
+	margin-bottom: 5px;
+	font: bold 40px @font-montserrat; 
+	text-transform: uppercase;
+}
+
+.sub_title_item {
+	font: 16px 'Droid Serif', serif;
+	margin-bottom: 75px;
+}
+
+.services_item {
+	width: 33%;
+	display: inline-block;
+	padding-top: 90px;
+}
+
+.service_name {
+	margin-bottom: 10px;
+	font: bold 18px @font-montserrat; 
+}
+
+.service_name_item{
+	font: 14px 'Roboto Slab', serif;
+	color: #777777;
+	padding: 0 10px;
+	line-height: 1.6;
+}
+.e-commerce {
+	background: url(..//images/e-commerce.png) no-repeat top;
+}
+
+.responsive_web {
+	background: url(..//images/responsive_web.png) no-repeat top;
+}
+
+.web_security {
+	background: url(..//images/web_security.png) no-repeat top;
+}
+
+/*Portfolio*/
+
+.portfolio {
+	background-color: #f7f7f7;
+}
+
+.portfolio:after {
+	.clear
+}
+
+.portflio_wrap:after {
+	.clear
+}
+
+.sub_title {
+	margin-bottom: 5px;
+	font: bold 40px @font-montserrat; 
+	text-transform: uppercase;
+}
+
+.sub_title_item {
+	font: 16px 'Droid Serif', serif;
+	margin-bottom: 75px;
+}
+
+.portfolio_item {
+	width: 30.95%;
+	float: left;
+	background: #fff;
+	margin: 0 3.5% 5% 0;
+	padding-bottom: 2%;
+}
+
+.portfolio_item:hover {
+    .box-shadow;
+    transition: all 0.3s ease 0s;
+ 	opacity: 0.8;
+}
+
+.portfolio_item:nth-of-type(3n) {
+	margin-right: 0;
+}
+
+.portfolio_name {
+	padding-top: 20px;
+	font: bold 18px @font-montserrat; 
+}
+
+.portfolio_name_item{
+	padding-top: 5px;
+	font: 16px 'Droid Serif', serif;
+	color: #777777;
+}
+
+/*About Us*/
+.about-us {
+	background-color: #fff;
+   
+}
