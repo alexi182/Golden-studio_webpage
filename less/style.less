@@ -1,54 +1,35 @@
 /*Общее*/
-
 html {
 	height: 100%;
 }
-
 *{
 	margin: 0;
 	padding: 0; 
 	border: 0;
 	list-style: none;
 }
-
-.clear {
-	display: block;
-	content: "";
-	clear: both;
-}
-
 body{
 	height: 100%;
 	background-color: #232323;
 }
-
-a{
+a { 
 	text-decoration: none;
 }
 a:active{
 	border: none;
 }
 
-/*Общие стили */
-.wrapper {
-	width: @content-width;
-	margin: 0 auto;
-}
-
-.block {
-	padding: 120px 0;
-    text-align: center;
-}
 
 /*Шрифты*/
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
 
 /*Переменные*/
-
 @content-width: 940px;
 @font-montserrat: 'Montserrat', sans-serif;
-
+@droid: 'Droid Serif', serif;
+@roboto: 'Roboto Slab', serif;
 
 /*Mixins*/
 .button-style (@width, @height, @color, @background-color){
@@ -58,7 +39,7 @@ a:active{
 	background-color:  @background-color;
 }
 
-.button-radius (@radius:3px){
+.radius (@radius:3px){
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
 	border-radius: @radius;
@@ -68,6 +49,32 @@ a:active{
 	-webkit-box-shadow: 0px 1px 5px 7px rgba(0,0,0,0.67);
 	-moz-box-shadow: 0px 1px 5px 7px rgba(0,0,0,0.67);
 	box-shadow: 0px 1px 5px 7px rgba(0,0,0,0.67);
+}
+
+
+/*Общие стили */
+.clear {
+	display: block;
+	content: "";
+	clear: both;
+}
+.wrapper {
+	width: @content-width;
+	margin: 0 auto;
+}
+.block {
+	padding: 120px 0;
+    text-align: center;
+}
+.sub_title {
+	margin-bottom: 5px;
+	font: bold 40px @font-montserrat; 
+	text-transform: uppercase;
+}
+.sub_title_item {
+	font: 16px @droid;
+	margin-bottom: 75px;
+	color: #777777;
 }
 
 /*Шапка*/
@@ -123,7 +130,7 @@ a:active{
 
 .headline {
 	padding-top: 270px;
-	font: 40px Droid serif;
+	font: 40px @droid;
 	margin-bottom: 20px;
 }
 
@@ -131,12 +138,11 @@ a:active{
 	margin-bottom: 40px;
 	font: bold 75px @font-montserrat; 
 	text-transform: uppercase;
-	
 }
 
 .button {
 	.button-style (235px, 63px, #fff, #fed136);
-	.button-radius;
+	.radius;
 	text-transform: uppercase;
 	cursor: pointer;
 	font: bold 18px @font-montserrat;
@@ -155,17 +161,6 @@ a:active{
 	background-color: #fff;
 }
 
-.sub_title {
-	margin-bottom: 5px;
-	font: bold 40px @font-montserrat; 
-	text-transform: uppercase;
-}
-
-.sub_title_item {
-	font: 16px 'Droid Serif', serif;
-	margin-bottom: 75px;
-}
-
 .services_item {
 	width: 33%;
 	display: inline-block;
@@ -178,21 +173,21 @@ a:active{
 }
 
 .service_name_item{
-	font: 14px 'Roboto Slab', serif;
+	font: 14px @roboto;
 	color: #777777;
 	padding: 0 10px;
 	line-height: 1.6;
 }
 .e-commerce {
-	background: url(..//images/e-commerce.png) no-repeat top;
+	background: url(..//images/services-1.png) no-repeat top;
 }
 
 .responsive_web {
-	background: url(..//images/responsive_web.png) no-repeat top;
+	background: url(..//images/services-2.png) no-repeat top;
 }
 
 .web_security {
-	background: url(..//images/web_security.png) no-repeat top;
+	background: url(..//images/services-3.png) no-repeat top;
 }
 
 /*Portfolio*/
@@ -202,22 +197,7 @@ a:active{
 }
 
 .portfolio:after {
-	.clear
-}
-
-.portflio_wrap:after {
-	.clear
-}
-
-.sub_title {
-	margin-bottom: 5px;
-	font: bold 40px @font-montserrat; 
-	text-transform: uppercase;
-}
-
-.sub_title_item {
-	font: 16px 'Droid Serif', serif;
-	margin-bottom: 75px;
+	.clear;
 }
 
 .portfolio_item {
@@ -245,12 +225,120 @@ a:active{
 
 .portfolio_name_item{
 	padding-top: 5px;
-	font: 16px 'Droid Serif', serif;
+	font: 16px @droid;
 	color: #777777;
 }
 
 /*About Us*/
-.about-us {
+
+.aboutus {
 	background-color: #fff;
-   
+ }
+
+.aboutus_item:after {
+	.clear;
+}
+
+.left_text {
+	width: 35%;
+	float: left;
+	text-align: right;
+}
+
+.left_image{
+	width: 30%;	
+	float: left;
+}
+
+.right_text {
+	width: 35%;
+	float: right;
+	text-align: left;
+}
+
+.right_image {
+	width: 30%;	
+	float: right;
+}
+
+.aboutus_name {
+	font: bold 18px @font-montserrat;
+	line-height: 1.5; 
+}
+
+.aboutus_name_item {
+	font: 14px @roboto;
+	color: #777777;
+	margin-top: 6px;
+	line-height: 1.5; 
+}
+
+.aboutus_image {
+	height: 177px;
+	
+}
+
+.aboutus_image img {
+	border: 7px solid #f1f1f1;
+	.radius (50%);
+}
+
+.aboutus_item:after {
+	display: block;
+	content: "";
+	height: 94px;
+	width: 3px;
+	background: #f1f1f1;
+	margin: 0 auto;
+}
+
+.aboutus_item_link {
+	height: 170px;
+	width: 170px;
+	border: 7px solid #f1f1f1;
+	.radius (50%);
+	background-color: #fed136;
+	margin: 0 auto;
+}
+
+.about-link {
+	display: block;
+	font: bold 18px/1.5 @font-montserrat;
+	color: #fff;
+	text-transform: uppercase;
+	padding-top: 35px; 
+}
+
+.about-link:hover {
+	opacity: 0.8;
+	text-decoration: underline;
+}
+
+/*Our Amazing team*/
+.our_amazing_team{
+	background-color: #f7f7f7;
+}
+
+.our_amazing_team_item {
+	width: 33%;
+	display: inline-block;
+}
+
+.team_photo {
+	width: 239px;
+	height: 239px;
+	background: #000;
+	.radius(50%);
+	margin: 0 auto;
+}
+
+.team_name {
+	font: bold 16px @font-montserrat;
+	padding-top: 20px;
+}
+
+.team_name_item {
+	font: 14px @roboto;
+	color: #777777;
+	padding-top: 5px;
 }

@@ -144,13 +144,13 @@ a:active {
   line-height: 1.6;
 }
 .e-commerce {
-  background: url(..//images/e-commerce.png) no-repeat top;
+  background: url(..//images/services-1.png) no-repeat top;
 }
 .responsive_web {
-  background: url(..//images/responsive_web.png) no-repeat top;
+  background: url(..//images/services-2.png) no-repeat top;
 }
 .web_security {
-  background: url(..//images/web_security.png) no-repeat top;
+  background: url(..//images/services-3.png) no-repeat top;
 }
 /*Portfolio*/
 .portfolio {
