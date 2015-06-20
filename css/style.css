@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
 /*Общее*/
 html {
   height: 100%;
@@ -9,11 +10,6 @@ html {
   padding: 0;
   border: 0;
   list-style: none;
-}
-.clear {
-  display: block;
-  content: "";
-  clear: both;
 }
 body {
   height: 100%;
@@ -25,7 +21,20 @@ a {
 a:active {
   border: none;
 }
+/*Шрифты*/
+/*Переменные*/
+/*Mixins*/
+.box-shadow {
+  -webkit-box-shadow: 0px 1px 5px 7px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 0px 1px 5px 7px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 1px 5px 7px rgba(0, 0, 0, 0.67);
+}
 /*Общие стили */
+.clear {
+  display: block;
+  content: "";
+  clear: both;
+}
 .wrapper {
   width: 940px;
   margin: 0 auto;
@@ -34,13 +43,15 @@ a:active {
   padding: 120px 0;
   text-align: center;
 }
-/*Шрифты*/
-/*Переменные*/
-/*Mixins*/
-.box-shadow {
-  -webkit-box-shadow: 0px 1px 5px 7px rgba(0, 0, 0, 0.67);
-  -moz-box-shadow: 0px 1px 5px 7px rgba(0, 0, 0, 0.67);
-  box-shadow: 0px 1px 5px 7px rgba(0, 0, 0, 0.67);
+.sub_title {
+  margin-bottom: 5px;
+  font: bold 40px 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+.sub_title_item {
+  font: 16px 'Droid Serif', serif;
+  margin-bottom: 75px;
+  color: #777777;
 }
 /*Шапка*/
 .header {
@@ -87,7 +98,7 @@ a:active {
 }
 .headline {
   padding-top: 270px;
-  font: 40px Droid serif;
+  font: 40px 'Droid Serif', serif;
   margin-bottom: 20px;
 }
 .headline_item {
@@ -116,15 +127,6 @@ a:active {
 /*Service*/
 .services {
   background-color: #fff;
-}
-.sub_title {
-  margin-bottom: 5px;
-  font: bold 40px 'Montserrat', sans-serif;
-  text-transform: uppercase;
-}
-.sub_title_item {
-  font: 16px 'Droid Serif', serif;
-  margin-bottom: 75px;
 }
 .services_item {
   width: 33%;
@@ -159,20 +161,6 @@ a:active {
   content: "";
   clear: both;
 }
-.portflio_wrap:after {
-  display: block;
-  content: "";
-  clear: both;
-}
-.sub_title {
-  margin-bottom: 5px;
-  font: bold 40px 'Montserrat', sans-serif;
-  text-transform: uppercase;
-}
-.sub_title_item {
-  font: 16px 'Droid Serif', serif;
-  margin-bottom: 75px;
-}
 .portfolio_item {
   width: 30.95%;
   float: left;
@@ -200,6 +188,103 @@ a:active {
   color: #777777;
 }
 /*About Us*/
-.about-us {
+.aboutus {
   background-color: #fff;
+}
+.aboutus_item:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.left_text {
+  width: 35%;
+  float: left;
+  text-align: right;
+}
+.left_image {
+  width: 30%;
+  float: left;
+}
+.right_text {
+  width: 35%;
+  float: right;
+  text-align: left;
+}
+.right_image {
+  width: 30%;
+  float: right;
+}
+.aboutus_name {
+  font: bold 18px 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+.aboutus_name_item {
+  font: 14px 'Roboto Slab', serif;
+  color: #777777;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.aboutus_image {
+  height: 177px;
+}
+.aboutus_image img {
+  border: 7px solid #f1f1f1;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.aboutus_item:after {
+  display: block;
+  content: "";
+  height: 94px;
+  width: 3px;
+  background: #f1f1f1;
+  margin: 0 auto;
+}
+.aboutus_item_link {
+  height: 170px;
+  width: 170px;
+  border: 7px solid #f1f1f1;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #fed136;
+  margin: 0 auto;
+}
+.about-link {
+  display: block;
+  font: bold 18px/1.5 'Montserrat', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  padding-top: 35px;
+}
+.about-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+/*Our Amazing team*/
+.our_amazing_team {
+  background-color: #f7f7f7;
+}
+.our_amazing_team_item {
+  width: 33%;
+  display: inline-block;
+}
+.team_photo {
+  width: 239px;
+  height: 239px;
+  background: #000;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.team_name {
+  font: bold 16px 'Montserrat', sans-serif;
+  padding-top: 20px;
+}
+.team_name_item {
+  font: 14px 'Roboto Slab', serif;
+  color: #777777;
+  padding-top: 5px;
 }
