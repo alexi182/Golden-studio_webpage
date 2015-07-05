@@ -49,19 +49,25 @@
 
 /*Переменные*/
 @content-width: 940px;
-@montserrat: 'Montserrat';
-@droid: 'DroidSerifItalic';
-@roboto:'RobotoSlabRegular'; 
+@montserrat: 'Montserrat', sans-serif;
+@droid: 'DroidSerifItalic', serif;
+@roboto:'RobotoSlabRegular', serif; 
 
 /*Mixins*/
-.button-style (@width, @height, @color, @background-color){
+.clear() {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.button-style (@width, @height, @color, @background-color) {
 	width: @width;
 	height: @height;
 	color: @color;
 	background-color: @background-color;
 }
 
-.radius (@radius:3px) {
+.radius (@radius) {
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
 	border-radius: @radius;
@@ -159,34 +165,34 @@
 body {
 	background-color: #232323;
 }
+
 a { 
 	text-decoration: none;
 }
-a:active{
-	border: none;
-}
-.clear {
-	display: block;
-	content: "";
-	clear: both;
-}
+
 .container {
 	width: @content-width;
 	margin: 0 auto;
 }
+
 .block {
 	padding: 120px 0;
+    
     text-align: center;
 }
+
 .title {
-	margin-bottom: 10px;
 	font: bold 40px @montserrat; 
 	text-transform: uppercase;
+
+	margin-bottom: 10px;
 }
+
 .title_item {
 	font: 16px @droid;
-	margin-bottom: 75px;
 	color: #777777;
+
+	margin-bottom: 75px;
 }
 
 .placeholder-style {
@@ -199,14 +205,13 @@ a:active{
 .header {
 	position: absolute;
 	top: 41px;
+	
 	width: 100%;
 
-	&.container:after{
-		.clear;
+	& .container:after{
+		.clear();
 	}
-
 };
-
 
 .logo {
 	float: left;
@@ -217,15 +222,13 @@ a:active{
 	}
 }
 
-
 .menu {
 	float: right;
 	padding-top: 9px;
 }
 
 .menu_item {
-	font-family: @montserrat;
-	font-size: 15px;
+	font: 15px @montserrat;
 	text-transform: uppercase;
 	color: #fff;
 }
@@ -241,6 +244,7 @@ a:active{
 
 .menu_link_item {
 	color: #fff;
+	
 	.transition(all, 0.3s, ease);
 
 	&:hover {
@@ -267,13 +271,14 @@ a:active{
 
 .headline_item {
 	margin-bottom: 40px;
+	
 	font: bold 75px @montserrat; 
 	text-transform: uppercase;
 }
 
 .button {
 	.button-style (235px, 63px, #fff, #fed136);
-	.radius;
+	.radius(3px);
 	.transition(all, 0.5s, ease);
 	
 	text-transform: uppercase;
@@ -330,7 +335,7 @@ a:active{
 }
 
 .portfolio .container:after {
-	.clear;
+	.clear();
 }
 
 .portfolio_item {
@@ -376,7 +381,8 @@ a:active{
  }
 
 .aboutus_item:after {
-	.clear;
+	.clear();
+	
 	height: 94px;
 	width: 3px;
 	background: #f1f1f1;
@@ -460,7 +466,7 @@ a:active{
 }
 
 /*Our Amazing team*/
-.our_amazing_team{
+.our_amazing_team {
 	background-color: #f7f7f7;
 }
 
@@ -519,7 +525,7 @@ a:active{
 	}
 }
 
-.partners_item {
+.partners_link {
 	vertical-align: middle;
 	display: inline-block;
 	
@@ -541,7 +547,7 @@ a:active{
 }
 
 .form_template:after {
-	.clear;
+	.clear();
 	width: 900px;
 }
 
@@ -651,7 +657,7 @@ a:active{
 	box-sizing: border-box;
 
 	&:after {
-		.clear;
+		.clear();
 	}
 }
 
