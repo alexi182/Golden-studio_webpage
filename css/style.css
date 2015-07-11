@@ -168,12 +168,12 @@ a {
   padding: 120px 0;
   text-align: center;
 }
-.title {
+.block_title {
   font: bold 40px 'Montserrat', sans-serif;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-.title_item {
+.block_title_item {
   font: 16px 'DroidSerifItalic', serif;
   color: #777777;
   margin-bottom: 75px;
@@ -184,10 +184,16 @@ a {
   color: #bbbbbb;
 }
 /*Шапка*/
+.banner_wrapper {
+  background: url(../images/background-top.jpg) no-repeat center bottom;
+  background-size: cover;
+  height: 700px;
+  color: #ffffff;
+  text-align: center;
+}
 .header {
-  position: absolute;
-  top: 41px;
   width: 100%;
+  padding-top: 40px;
 }
 .header .container:after {
   display: block;
@@ -207,8 +213,8 @@ a {
   transition: all 0.6s ease 0s;
 }
 .menu {
-  float: right;
   padding-top: 9px;
+  float: right;
 }
 .menu_item {
   font: 15px 'Montserrat', sans-serif;
@@ -234,16 +240,10 @@ a {
   -moz-opacity: 0.5;
   opacity: 0.5;
 }
-/*Фоновое изображение*/
-.home {
-  background: url(../images/background-top.jpg) no-repeat center bottom;
-  background-size: cover;
-  height: 700px;
-  color: #ffffff;
-  text-align: center;
+.banner_slogan {
+  margin-top: 200px ;
 }
 .headline {
-  padding-top: 270px;
   margin-bottom: 20px;
   font: 40px 'DroidSerifItalic', serif;
 }
@@ -440,7 +440,7 @@ a {
   -o-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
 }
-.image_link:hover .mask {
+.mask:hover {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
@@ -543,6 +543,7 @@ a {
 .our_amazing_team_item {
   width: 33%;
   display: inline-block;
+  vertical-align: top;
 }
 .team_name {
   font: bold 16px 'Montserrat', sans-serif;

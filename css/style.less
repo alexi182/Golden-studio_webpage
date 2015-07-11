@@ -209,14 +209,14 @@ a {
     text-align: center;
 }
 
-.title {
+.block_title {
 	font: bold 40px @montserrat; 
 	text-transform: uppercase;
 
 	margin-bottom: 10px;
 }
 
-.title_item {
+.block_title_item {
 	font: 16px @droid;
 	color: @grey;
 
@@ -239,11 +239,18 @@ a {
 
 						/*Шапка*/
 
-.header {
-	position: absolute;
-	top: 41px;
+.banner_wrapper {
+	background: url(../images/background-top.jpg) no-repeat center bottom;
+	background-size: cover;
+	height: 700px;	
 	
+	color: @white;
+	text-align: center;
+}
+
+.header {
 	width: 100%;
+	padding-top: 40px;
 
 	& .container:after{
 		.clear();
@@ -260,8 +267,8 @@ a {
 }
 
 .menu {
-	float: right;
 	padding-top: 9px;
+	float: right;
 }
 
 .menu_item {
@@ -289,22 +296,13 @@ a {
 	}
 }
 
-
-					/*Фоновое изображение*/
-
-.home {
-	background: url(../images/background-top.jpg) no-repeat center bottom;
-	background-size: cover;
-	height: 700px;	
-	
-	color: @white;
-	text-align: center;
+.banner_slogan {
+	margin-top: 200px ;
 }
 
 .headline {
-	padding-top: 270px;
 	margin-bottom: 20px;
-	
+		
 	font: 40px @droid;
 }
 
@@ -457,7 +455,7 @@ a {
 	text-align: right;
 }
 
-.right_article {
+.right_article { 
 	width: 35%;
 	float: right;
 	
@@ -527,7 +525,7 @@ a {
 	.transition(all, 0.4s, ease-in-out, 0s);		
 }
 
-.image_link:hover .mask {
+.mask:hover  {
 	.opacity(1);	
 }
 
@@ -623,6 +621,7 @@ a {
 .our_amazing_team_item {
 	width: 33%;
 	display: inline-block;
+	vertical-align: top;
 }
 
 .team_name {
