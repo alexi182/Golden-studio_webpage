@@ -51,7 +51,8 @@
 							
 						 /*Переменные*/
 
-@content-width: 940px;
+@content-max-width: 920px;
+@content-min-width: 100px;
 
 @white: #fff;
 @grey: #777777;
@@ -199,7 +200,11 @@ a {
 }
 
 .container {
-	width: @content-width;
+
+	min-width: @content-min-width;
+	max-width: @content-max-width;
+	
+	padding: 0 20px;
 	margin: 0 auto;
 }
 
@@ -216,7 +221,7 @@ a {
 	margin-bottom: 10px;
 }
 
-.block_title_item {
+.block_subtitle {
 	font: 16px @droid;
 	color: @grey;
 
@@ -252,7 +257,7 @@ a {
 	width: 100%;
 	padding-top: 40px;
 
-	& .container:after{
+	& .container:after {
 		.clear();
 	}
 };
@@ -271,14 +276,18 @@ a {
 	float: right;
 }
 
-.menu_item {
+.menu_list {
 	font: 15px @montserrat;
 	text-transform: uppercase;
 	color: @white;
+
+	&:after {
+		.clear();
+	}
 }
 
-.menu_link {
-	display: inline;
+.menu_list_item {
+	display: inline-block;
 	padding-left: 40px;
 
 	&:first-child {
@@ -286,7 +295,7 @@ a {
 	}
 }
 
-.menu_link_item {
+.menu_link {
 	color: @white;
 	
 	.transition(all, 0.3s, ease, 0s);
@@ -294,6 +303,29 @@ a {
 	&:hover {
 		.opacity(0.5); 
 	}
+}
+
+#icon_menu {
+	width: 50px;
+	height: 40px;
+
+	display: none;
+	cursor: pointer;
+}
+
+#icon_menu:before {
+	content: '';
+	display: block;
+	
+	height: 6px; 
+	width: 40px;
+	
+	position: absolute; 
+	top: 5px; 
+	right: 10px;
+	
+	background-color: #1493C8;
+	box-shadow: 0 12px #1496CB, 0 24px #1496CB;
 }
 
 .banner_slogan {
@@ -306,7 +338,7 @@ a {
 	font: 40px @droid;
 }
 
-.headline_item {
+.headline span {
 	margin-bottom: 40px;
 	
 	font: bold 75px @montserrat; 
@@ -343,9 +375,13 @@ a {
 	background-color: @white;
 }
 
-.services_item {
-	width: 33%;
+.post{
+	width: 30%;
 	display: inline-block;
+	vertical-align: top;	
+}
+
+.services .post {
 	padding-top: 90px;
 }
 
@@ -355,7 +391,7 @@ a {
 	font: bold 18px @montserrat; 
 }
 
-.service_name_item {
+.service_text {
 	font: 14px @roboto;
 	color: @grey;
 	
@@ -386,10 +422,9 @@ a {
 	.clear();
 }
 
-.portfolio_item {
-	float: left;
-	width: 30.95%;
-	margin: 0 33px 50px 0;
+.portfolio .post {
+
+	margin: 0 2% 50px 0;
 	padding-bottom: 30px;
 	
 	background: @white;
@@ -400,24 +435,22 @@ a {
 		.box-shadow(0, 0, 16px, 0px, rgba(56, 61, 59, 0.4));
  	}
 	
-	&:nth-of-type(3n) {
+	&:nth-of-type(3n+3) {
 		margin-right: 0;
 	}
 
-	img {
-		width: 100%;
-	}
 }
 
-.portfolio_item_link {
+.portfolio_link {
 	display: block;
 	height: 301px;
 
 	overflow: hidden;	
 }
 
-.portfolio_item_link img {
+.portfolio_link img {
 	.transition;
+	 width: 100%;
 
 	&:hover {
 		.transform_scale(1.15,1.15);
@@ -430,14 +463,14 @@ a {
 	font: bold 18px @montserrat; 
 }
 
-.portfolio_name_item{
+.portfolio_subname{
 	padding-top: 5px;
 	
 	font: 16px @droid;
 	color: @grey;
 }
 
-								
+					
 							/*About Us*/
 
 .aboutus {
@@ -477,10 +510,8 @@ a {
 
 .aboutus_image {
 	width: 30%;	
-	position: relative;
 
 	img {
-		display: inline-block;
 		border: 7px solid #f1f1f1;
 		.radius (50%);
 	}
@@ -506,16 +537,17 @@ a {
 }
 
 .image_link {
+	position: relative;
 	display: block;
 	height: 182px;
 }
 
 .mask {
 	position: absolute;
-	right: 50px;
+	right: 47px;
     top: 0;
-	height: 183px;
-	width: 183px;
+	height: 182px;
+	width: 182px;
 	text-align: center;
 
 	background: rgba(0, 0, 0, 0.6);
@@ -525,7 +557,7 @@ a {
 	.transition(all, 0.4s, ease-in-out, 0s);		
 }
 
-.mask:hover  {
+.mask:hover {
 	.opacity(1);	
 }
 
@@ -573,13 +605,13 @@ a {
 	top: 53px;
 }
 
-.aboutus_image a:hover .mask_item {
+.image_link:hover .mask_item {
 	visibility: visible;
 
 	.transform_translateX(0);
 }
 
-.aboutus_image a:hover .mask_item_info {
+.image_link:hover .mask_item_info {
 	visibility: visible;
 
 	.transform_translateY(0);
@@ -601,7 +633,7 @@ a {
 	}
 }
 
-.aboutus_item_link {
+.aboutus_link_item {
 	display: block;
 	
 	font: bold 18px/1.5 @montserrat;
@@ -614,9 +646,19 @@ a {
 						
 						/*Team*/
 
-.our_amazing_team {
+.team {
 	background-color: #f7f7f7;
 }
+
+.team .post {
+		margin-right: 1%;
+	}
+
+.team .post img {
+	height: auto;
+	max-width: 100%;
+	.radius(50%);
+} 
 
 .our_amazing_team_item {
 	width: 33%;
@@ -627,22 +669,10 @@ a {
 .team_name {
 	font: bold 16px @montserrat;
 
-	padding-bottom: 5px;
-	
-	&:before {
-		content: "";
-		display: block;
-
-		width: 239px;
-		height: 239px;
-		background: #000;
-		margin: 0 auto 20px;
-	
-		.radius(50%);
-	}
+	padding: 15px 0 5px 0;
 }
 
-.team_profession {
+.profession {
 	font: 14px @roboto;
 	color: @grey;	
 }
@@ -661,13 +691,13 @@ a {
 }
 
 						
-						/*Partners*/
+						/*Clients*/
 
-.partners {
+.clients {
 	background: @white;
 }
 
-.partners {
+.clients {
 	
 	.container {
 		padding: 40px 0;
@@ -675,7 +705,7 @@ a {
 	}
 }
 
-.partners_link {
+.clients_link {
 	vertical-align: middle;
 	display: inline-block;
 	
@@ -698,7 +728,7 @@ a {
 	background-size: cover;
 }
 
-.form_template:after {
+.contact_item:after {
 	.clear();
 	width: 900px;
 }
@@ -706,11 +736,6 @@ a {
 .text_input {
 	width: 48%;
 	float:left;	
-}
-
-.text_area {
-	float:right;
-	width: 48%;
 }
 
 .text_item {
@@ -739,9 +764,6 @@ a {
 
 .text_item::-webkit-input-placeholder {
 	.placeholder-style;
-
-	text-indent: 0px;  
-	transition: text-indent 0.3s ease;
 }
 
 .text_item::-moz-placeholder {
@@ -753,8 +775,7 @@ a {
 }
 
 .text_item:focus::-webkit-input-placeholder {
-	text-indent: 500px;  
-	transition: text-indent 0.3s ease;
+	color: transparent;
 }
 
 .text_item:focus::-moz-placeholder {
@@ -763,6 +784,11 @@ a {
 
 .text_item:focus::-ms-input-placeholder {
 	color: transparent;
+}
+
+.text_area {
+	float:right;
+	width: 48%;
 }
 
 .textarea_item {
@@ -831,7 +857,6 @@ a {
 }
 
 .copyright {
-	width: 30%;
 	float: left;
 	margin-top: 11px;
 	
@@ -840,8 +865,202 @@ a {
 }
 
 .social_footer {
-	width: 22%;
-	margin: 0 auto;
+	float: left;
+	margin-left: 11%;
 }
 
+					/*Responsive*/
 
+@media screen and (max-width: 1024px) {
+	.mask  {
+		display: none;
+	}	
+}
+
+@media screen and (min-width: 1024px) {
+	.aboutus_text span {
+		display: none;
+	}	
+}
+
+@media screen and (max-width: 768px) { 
+	
+	.headline span {
+		font-size: 22px;
+	}
+	
+	.logo {
+		float: none;
+		margin-top: 5px;
+		margin-bottom: 30px;
+	}
+	
+	.menu {
+		float: none;
+		padding-top: 0;
+	}
+	
+	/*#icon_menu {
+		display: block;
+		position: relative;
+	}*/
+	
+	.banner_slogan {
+		margin-top: 170px;
+	}
+
+	.aboutus_image {
+		img {
+			height: auto;
+			max-width: 100%;
+		}
+		
+		&:after {
+			display: none;
+		}
+	}
+	
+	.aboutus_item {
+		margin-bottom: 35px;
+	}
+	
+	.left_article {
+		width: 68%;
+		float: right;
+		text-align: left;
+		margin-top: 18px;
+	}
+	
+	.left_image {
+		float: right;
+		margin-right: 2%
+	}
+	
+	.right_article {
+		width: 68%;
+		float: left;
+		text-align: right;
+		margin-top: 18px;
+	}
+	
+	.right_image {
+		float: left;
+		margin-left: 2%;
+	}
+}
+
+@media screen and (max-width: 680px) { 
+	
+	.menu_list_item {
+		padding-left: 10px; 
+	}
+
+	.post {
+		width: 45%; 
+	}
+
+	.portfolio{
+		
+		.post:nth-of-type(2n+2) {
+			margin-right: 0;
+		} 
+	}
+	
+	.portfolio {
+		
+		.post:nth-of-type(3n+3) {
+			margin-right: 2%;
+		}
+	}
+
+
+	.right_article, .left_article {
+		margin: 0 0 0 5%;
+		float: right;
+		text-align: center;
+		width: 65%;
+	}
+	
+	.right_image, .left_image {
+		float: right;
+		margin: 0;
+	}
+	
+	.text_input, .text_area {
+		float: none;
+		width: 100%;
+	}
+
+	.footer_item {
+		text-align: center;
+	}
+
+	.copyright {
+		float: none;
+		width: 100%;	
+	}
+
+	.social_footer {
+		float: none;
+		width: 100%;
+		margin: 10px 0 0 0;
+	}
+}
+
+@media screen and (max-width: 480px) { 
+	
+	.container {
+		
+		.post {
+			width: 70%; 
+			margin: 0 0 25px;
+		}	
+	}
+
+	.banner_slogan {
+		margin-top: 70px;
+	}
+
+	.menu_list_item {
+		display: block;
+		padding-left: 0;
+		padding-bottom: 20px;
+	}
+
+	.menu_list_item:last-child {
+		padding-bottom: 0;
+	}
+
+	.aboutus_image {
+		
+		width: 100%;
+		margin-top: 10px;
+
+		img {
+			.radius (0);
+		}
+	}
+
+	.aboutus_link {
+		display: none;
+	}
+	
+	.right_article, .left_article {
+		margin: 0;
+		width: 100%;
+	}
+
+	.button {
+	  	height: 45px;
+		 width: 200px;
+	}
+}	
+
+@media screen and (max-width: 320px) { 
+	.container { 
+		
+		.post {
+			width: 90%; 
+		}
+	}
+}	
