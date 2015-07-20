@@ -154,6 +154,12 @@
   height: 40px;
 }
 /*Общие стили */
+#page {
+  height: auto !important;
+  min-height: 100%;
+  min-width: 100px;
+  width: 100%;
+}
 body {
   background-color: #232323;
 }
@@ -248,7 +254,7 @@ a {
   opacity: 0.5;
 }
 #icon_menu {
-  width: 50px;
+  width: 59px;
   height: 40px;
   display: none;
   cursor: pointer;
@@ -261,8 +267,8 @@ a {
   position: absolute;
   top: 5px;
   right: 10px;
-  background-color: #1493C8;
-  box-shadow: 0 12px #1496CB, 0 24px #1496CB;
+  background-color: #fff;
+  box-shadow: 0 12px #fff, 0 24px #fff;
 }
 .banner_slogan {
   margin-top: 200px ;
@@ -307,7 +313,7 @@ a {
   background-color: #ffffff;
 }
 .post {
-  width: 30%;
+  width: 31.7%;
   display: inline-block;
   vertical-align: top;
 }
@@ -372,10 +378,10 @@ a {
   width: 100%;
 }
 .portfolio_link img:hover {
-  -webkit-transform: scale(1.15) scale(1.15);
-  -moz-transform: scale(1.15) scale(1.15);
-  -ms-transform: scale(1.15) scale(1.15);
-  -o-transform: scale(1.15) scale(1.15);
+  -webkit-transform: scale(1.1) scale(1.1);
+  -moz-transform: scale(1.1) scale(1.1);
+  -ms-transform: scale(1.1) scale(1.1);
+  -o-transform: scale(1.1) scale(1.1);
 }
 .portfolio_name {
   padding-top: 20px;
@@ -414,6 +420,12 @@ a {
   color: #777777;
   line-height: 1.5;
   margin-top: 6px;
+}
+.aboutus_text span a {
+  color: #0183af;
+}
+.aboutus_text span a:hover {
+  color: #01a9e2;
 }
 .aboutus_image {
   width: 30%;
@@ -633,11 +645,11 @@ a {
   clear: both;
   width: 900px;
 }
-.text_input {
+.contact_column_text {
   width: 48%;
   float: left;
 }
-.text_item {
+.text_input {
   background: #ffffff;
   width: 100%;
   height: 50px;
@@ -657,40 +669,40 @@ a {
   transition: box-shadow 0.3s linear 0s;
   resize: none;
 }
-.text_item:focus {
+.text_input:focus {
   -webkit-box-shadow: 1px 1px 7px 4px #eb1a1a;
   -moz-box-shadow: 1px 1px 7px 4px #eb1a1a;
   box-shadow: 1px 1px 7px 4px #eb1a1a;
 }
-.text_item::-webkit-input-placeholder {
+.text_input::-webkit-input-placeholder {
   font: bold 14px 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: #bbbbbb;
 }
-.text_item::-moz-placeholder {
+.text_input::-moz-placeholder {
   font: bold 14px 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: #bbbbbb;
 }
-.text_item:-ms-input-placeholder {
+.text_input:-ms-input-placeholder {
   font: bold 14px 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: #bbbbbb;
 }
-.text_item:focus::-webkit-input-placeholder {
+.text_input:focus::-webkit-input-placeholder {
   color: transparent;
 }
-.text_item:focus::-moz-placeholder {
+.text_input:focus::-moz-placeholder {
   color: transparent;
 }
-.text_item:focus::-ms-input-placeholder {
+.text_input:focus::-ms-input-placeholder {
   color: transparent;
 }
-.text_area {
+.contact_column_area {
   float: right;
   width: 48%;
 }
-.textarea_item {
+.textarea_input {
   background: #ffffff;
   width: 100%;
   height: 210px;
@@ -710,33 +722,33 @@ a {
   transition: box-shadow 0.3s linear 0s;
   resize: none;
 }
-.textarea_item:focus {
+.textarea_input:focus {
   -webkit-box-shadow: 1px 1px 7px 4px #eb1a1a;
   -moz-box-shadow: 1px 1px 7px 4px #eb1a1a;
   box-shadow: 1px 1px 7px 4px #eb1a1a;
 }
-.textarea_item::-webkit-input-placeholder {
+.textarea_input::-webkit-input-placeholder {
   font: bold 14px 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: #bbbbbb;
 }
-.textarea_item::-moz-placeholder {
+.textarea_input::-moz-placeholder {
   font: bold 14px 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: #bbbbbb;
 }
-.textarea_item:-ms-input-placeholder {
+.textarea_input:-ms-input-placeholder {
   font: bold 14px 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: #bbbbbb;
 }
-.textarea_item:focus::-webkit-input-placeholder {
+.textarea_input:focus::-webkit-input-placeholder {
   color: transparent;
 }
-.textarea_item:focus::-moz-placeholder {
+.textarea_input:focus::-moz-placeholder {
   color: transparent;
 }
-.textarea_item:focus::-ms-input-placeholder {
+.textarea_input:focus::-ms-input-placeholder {
   color: transparent;
 }
 /*Footer*/
@@ -770,6 +782,11 @@ a {
     display: none;
   }
 }
+@media screen and (max-width: 940px) {
+  .portfolio .post:nth-of-type(3n+3) {
+    margin-right: 2%;
+  }
+}
 @media screen and (max-width: 768px) {
   .headline span {
     font-size: 22px;
@@ -783,10 +800,6 @@ a {
     float: none;
     padding-top: 0;
   }
-  /*#icon_menu {
-		display: block;
-		position: relative;
-	}*/
   .banner_slogan {
     margin-top: 170px;
   }
@@ -803,8 +816,8 @@ a {
   .left_article {
     width: 68%;
     float: right;
-    text-align: left;
     margin-top: 18px;
+    text-align: left;
   }
   .left_image {
     float: right;
@@ -813,8 +826,8 @@ a {
   .right_article {
     width: 68%;
     float: left;
-    text-align: right;
     margin-top: 18px;
+    text-align: right;
   }
   .right_image {
     float: left;
@@ -822,8 +835,29 @@ a {
   }
 }
 @media screen and (max-width: 680px) {
+  .logo {
+    margin-bottom: 10px;
+  }
+  #icon_menu {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+  }
+  .menu_list {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid grey;
+    display: none;
+  }
   .menu_list_item {
-    padding-left: 10px;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid grey;
+  }
+  .menu_list_item:last-child {
+    border-bottom: none;
+  }
+  .banner_slogan {
+    margin-top: 30px;
   }
   .post {
     width: 45%;
@@ -831,23 +865,20 @@ a {
   .portfolio .post:nth-of-type(2n+2) {
     margin-right: 0;
   }
-  .portfolio .post:nth-of-type(3n+3) {
-    margin-right: 2%;
-  }
   .right_article,
   .left_article {
     margin: 0 0 0 5%;
     float: right;
-    text-align: center;
     width: 65%;
+    text-align: center;
   }
   .right_image,
   .left_image {
     float: right;
     margin: 0;
   }
-  .text_input,
-  .text_area {
+  .contact_column_text,
+  .contact_column_area {
     float: none;
     width: 100%;
   }
@@ -864,21 +895,15 @@ a {
     margin: 10px 0 0 0;
   }
 }
+@media screen and (min-width: 681px) {
+  .menu_list {
+    display: block !important;
+  }
+}
 @media screen and (max-width: 480px) {
   .container .post {
     width: 70%;
     margin: 0 0 25px;
-  }
-  .banner_slogan {
-    margin-top: 70px;
-  }
-  .menu_list_item {
-    display: block;
-    padding-left: 0;
-    padding-bottom: 20px;
-  }
-  .menu_list_item:last-child {
-    padding-bottom: 0;
   }
   .aboutus_image {
     width: 100%;
