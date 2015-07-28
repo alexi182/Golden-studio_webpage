@@ -5,8 +5,7 @@
 	list-style: none;
 }
 
-
-						/*Шрифты*/
+/*Шрифты*/
 
 @font-face {
     font-family: "RobotoSlabRegular";
@@ -48,10 +47,9 @@
     font-style: normal;
 }
 
-							
-						 /*Переменные*/
+/*Переменные*/
 
-@content-max-width: 920px;
+@content-max-width: 1240px;;
 @content-min-width: 100px;
 
 @white: #fff;
@@ -61,8 +59,7 @@
 @droid: 'DroidSerifItalic', serif;
 @roboto:'RobotoSlabRegular', serif; 
 
-							
-						/*Mixins*/
+/*Mixins*/
 
 .radius (@radius) {
 	-webkit-border-radius: @radius;
@@ -111,7 +108,6 @@
 	-o-transform: translateY(@y);
 	transform: translateY(@y);
 }
-
 
 .stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
     background-position: @x @y;
@@ -182,15 +178,8 @@
 	}
 }
 
-						
-					/*Общие стили */
-#page {
-	height: auto !important;
-	min-height: 100%;
-	min-width: 100px;
-	width: 100%;
-}
-
+/*Общие стили */
+					
 body {
 	background-color: #232323;
 }
@@ -247,8 +236,7 @@ a {
 	background-color: @background-color;
 }
 
-
-						/*Шапка*/
+/*Шапка*/
 
 .banner_wrapper {
 	background: url(../images/background-top.jpg) no-repeat center bottom;
@@ -269,6 +257,7 @@ a {
 };
 
 .logo {
+	display: block;
 	float: left;
 
 	&:hover {
@@ -312,26 +301,20 @@ a {
 }
 
 #icon_menu {
-	width: 59px;
-	height: 40px;
+	width: 40px;
+	height: 35px;
 
 	display: none;
 	cursor: pointer;
 }
 
-#icon_menu:before {
-	content: '';
+.icon-bar {
 	display: block;
-	
-	height: 6px; 
+	height: 6px;
 	width: 40px;
-	
-	position: absolute; 
-	top: 5px; 
-	right: 10px;
-	
 	background-color: #fff;
-	box-shadow: 0 12px #fff, 0 24px #fff;
+	
+	margin-bottom: 6px;
 }
 
 .banner_slogan {
@@ -374,8 +357,7 @@ a {
 	}
 }
 
-
-						/*Service*/
+/*Service*/
 
 .services {
 	background-color: @white;
@@ -417,8 +399,7 @@ a {
 	background: url(..//images/services-3.png) no-repeat top;
 }
 
-						
-						/*Portfolio*/
+/*Portfolio*/
 
 .portfolio {
 	background-color: #f7f7f7;
@@ -430,7 +411,6 @@ a {
 
 .portfolio { 
 	.post {
-
 		margin: 0 2% 50px 0;
 		padding-bottom: 30px;
 		
@@ -477,8 +457,7 @@ a {
 	color: @grey;
 }
 
-					
-							/*About Us*/
+/*About Us*/
 
 .aboutus {
 	background-color: @white;
@@ -553,13 +532,15 @@ a {
 
 .image_link {
 	position: relative;
+	margin: 0 auto;
 	display: block;
 	height: 182px;
+	width: 182px;
+
 }
 
 .mask {
 	position: absolute;
-	right: 47px;
     top: 0;
 	height: 182px;
 	width: 182px;
@@ -658,8 +639,7 @@ a {
 	padding-top: 35px;
 }
 
-						
-						/*Team*/
+/*Team*/
 
 .team {
 	background-color: #f7f7f7;
@@ -709,15 +689,13 @@ a {
 	line-height: 1.5;
 }
 
-						
-						/*Clients*/
+/*Clients*/
 
 .clients {
 	background: @white;
 }
 
 .clients {
-	
 	.container {
 		padding: 40px 0;
 		text-align: center;
@@ -738,7 +716,7 @@ a {
 	} 
 }
 						
-						/*Contact*/
+/*Contact*/
 
 .contact {
 	color: @white;
@@ -859,8 +837,7 @@ a {
 	color: transparent;
 }
 
-						/*Footer*/
-
+/*Footer*/
 
 .footer {
 	background-color: @white;
@@ -869,7 +846,6 @@ a {
 }
 
 .footer_item {
-	
 	&:after {
 		.clear();
 	}
@@ -888,19 +864,8 @@ a {
 	margin-left: 11%;
 }
 
-					/*Responsive*/
-
-@media screen and (max-width: 1024px) {
-	.mask  {
-		display: none;
-	}	
-}
-
-@media screen and (min-width: 1024px) {
-	.aboutus_text span {
-		display: none;
-	}	
-}
+					
+/*Responsive*/
 
 @media screen and (max-width: 940px) {
 	.portfolio {
@@ -916,15 +881,33 @@ a {
 		font-size: 22px;
 	}
 	
-	.logo {
-		float: none;
-		margin-top: 5px;
-		margin-bottom: 30px;
-	}
-	
 	.menu {
 		float: none;
-		padding-top: 0;
+		position: absolute;
+	    width: 100%;
+	    left: 0;
+	    top: 70px;
+	}
+
+	#icon_menu {
+		display: block;
+		float: right;
+	}
+
+	.menu_list {
+		background: rgba(126,126,126, 0.8);
+		border: 2px solid #000;
+		display: none;
+	}
+
+	.menu_list_item {
+		display: block;
+		padding: 10px 0;
+		border-bottom: 2px solid #000;
+	}
+
+	.menu_list_item:last-child {
+		border-bottom: none;
 	}
 	
 	.banner_slogan {
@@ -974,42 +957,12 @@ a {
 }
 
 @media screen and (max-width: 680px) { 
-	.logo {
-		margin-bottom: 10px;
-	}
-
-	#icon_menu {
-		display: block;
-		position: relative;
-		margin: 0 auto;
-	}
-
-	.menu_list {
-		background: rgba(0,0,0, 0.6);
-		border: 1px solid grey;
-		display: none;
-	}
-
-	.menu_list_item {
-		display: block;
-		padding: 10px 0;
-		border-bottom: 1px solid grey;
-	}
-
-	.menu_list_item:last-child {
-		border-bottom: none;
-	}
-
-	.banner_slogan {
-		margin-top: 30px;
-	}
 
 	.post {
 		width: 45%; 
 	}
 
 	.portfolio{
-		
 		.post:nth-of-type(2n+2) {
 			margin-right: 0;
 		} 
@@ -1027,7 +980,15 @@ a {
 		float: right;
 		margin: 0;
 	}
+
+	.image_link {
+		width: 100%;
+	}
 	
+	.mask {
+		display: none;
+	}
+
 	.contact_column_text, .contact_column_area {
 		float: none;
 		width: 100%;
@@ -1049,15 +1010,8 @@ a {
 	}
 }
 
-@media screen and (min-width: 681px) { 
-	.menu_list {
-		display: block !important;
-	}
-}
-
 @media screen and (max-width: 480px) { 
 	.container {
-		
 		.post {
 			width: 70%; 
 			margin: 0 0 25px;
@@ -1065,7 +1019,6 @@ a {
 	}
 
 	.aboutus_image {
-		
 		width: 100%;
 		margin-top: 10px;
 
@@ -1082,7 +1035,7 @@ a {
 		margin: 0;
 		width: 100%;
 	}
-
+			
 	.button {
 	  	height: 45px;
 		 width: 200px;
@@ -1091,7 +1044,6 @@ a {
 
 @media screen and (max-width: 320px) { 
 	.container { 
-		
 		.post {
 			width: 90%; 
 		}
