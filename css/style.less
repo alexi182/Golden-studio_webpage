@@ -49,7 +49,7 @@
 
 /*Переменные*/
 
-@content-max-width: 1240px;;
+@content-max-width: 920px;
 @content-min-width: 100px;
 
 @white: #fff;
@@ -79,7 +79,7 @@
 	opacity: @opacity;
 }
  
-.transition (@property: all, @duration: 0.6s, @function: ease, @delay: 0s) {
+.transition(@property: all, @duration: 0.6s, @function: ease, @delay: 0s) {
 	-webkit-transition: @arguments;
 	-moz-transition: @arguments;
 	-o-transition: @arguments;
@@ -122,56 +122,56 @@
 
     &.sprite-facebook {
         .stitches-sprite(-5px, -5px, 41px, 41px);
-        .transition;
+        .transition();
     }
     &.sprite-facebook:hover {
         .stitches-sprite(-56px, -5px, 41px, 40px);
     }
 	&.sprite-facebook_footer {
         .stitches-sprite(-56px, -5px, 41px, 40px);
-        .transition;
+        .transition();
     }
     &.sprite-facebook_footer:hover {
         .stitches-sprite(-5px, -5px, 41px, 40px);
     }
 	&.sprite-google_plus {
         .stitches-sprite(-107px, -5px, 41px, 41px);
-        .transition;
+        .transition();
     }
 	&.sprite-google_plus:hover {
         .stitches-sprite(-158px, -5px, 41px, 40px);
     }
 	&.sprite-google_plus_footer {
         .stitches-sprite(-158px, -5px, 41px, 40px);
-        .transition;
+        .transition();
     }
     &.sprite-google_plus_footer:hover {
         .stitches-sprite(-107px, -5px, 41px, 40px);
     }
 	&.sprite-pinterest {
         .stitches-sprite(-209px, -5px, 41px, 41px);
-        .transition;
+        .transition();
     }
     &.sprite-pinterest:hover {
         .stitches-sprite(-260px, -5px, 41px, 40px);
     }
 	&.sprite-pinterest_footer {
         .stitches-sprite(-260px, -5px, 41px, 40px);
-        .transition;
+        .transition();
     }
     &.sprite-pinterest_footer:hover {
         .stitches-sprite(-209px, -5px, 41px, 40px);
     }
 	&.sprite-twitter {
         .stitches-sprite(-311px, -5px, 41px, 41px);
-        .transition;
+        .transition();
     }
     &.sprite-twitter:hover {
         .stitches-sprite(-362px, -5px, 41px, 40px);
     }
 	&.sprite-twitter_footer {
         .stitches-sprite(-362px, -5px, 41px, 40px);
-        .transition;
+        .transition();
     }
 	&.sprite-twitter_footer:hover {
         .stitches-sprite(-311px, -5px, 41px, 40px);
@@ -195,12 +195,14 @@ a {
 }
 
 .container {
-
 	min-width: @content-min-width;
 	max-width: @content-max-width;
-	
 	padding: 0 20px;
 	margin: 0 auto;
+
+	&:after {
+		.clear();
+	}
 }
 
 .block {
@@ -251,7 +253,7 @@ a {
 	width: 100%;
 	padding-top: 40px;
 
-	& .container:after {
+	&.container:after {
 		.clear();
 	}
 };
@@ -262,7 +264,7 @@ a {
 
 	&:hover {
 		.opacity(0.8); 
-		.transition;
+		.transition();
 	}
 }
 
@@ -293,7 +295,7 @@ a {
 .menu_link {
 	color: @white;
 	
-	.transition(all, 0.3s, ease, 0s);
+	.transition(all, 0.6s, ease, 0s);
 
 	&:hover {
 		.opacity(0.5); 
@@ -318,7 +320,7 @@ a {
 }
 
 .banner_slogan {
-	margin-top: 200px ;
+	margin-top: 200px;
 }
 
 .headline {
@@ -411,12 +413,12 @@ a {
 
 .portfolio { 
 	.post {
-		margin: 0 2% 50px 0;
+		margin: 0 2% 5% 0;
 		padding-bottom: 30px;
 		
 		background: @white;
 		
-		.transition;
+		.transition();
 
 		&:hover {
 			.box-shadow(0, 0, 16px, 0px, rgba(56, 61, 59, 0.4));
@@ -436,7 +438,7 @@ a {
 }
 
 .portfolio_link img {
-	.transition;
+	.transition();
 	 width: 100%;
 
 	&:hover {
@@ -570,7 +572,7 @@ a {
     font: 16px @montserrat;
     color: @white;
 	
-    .transition (all, 0.3s, linear, 0s);
+    .transition(all, 0.3s, linear, 0s);
 	visibility: hidden;
 }
 
@@ -591,7 +593,7 @@ a {
     font: 16px @montserrat;
     color: @white;
 	
-    .transition (all, 0.3s, linear, 0.2s);
+    .transition(all, 0.3s, linear, 0.2s);
 	visibility: hidden;
 
 	.transform_translateY (200%);
@@ -706,16 +708,16 @@ a {
 	vertical-align: middle;
 	display: inline-block;
 	
-	padding: 10px 30px;
+	padding: 10px 18px;
 	
-	.transition;
+	.transition();
 
 	&:hover {
 		.box-shadow(0, 0, 16px, 0px, rgba(56, 61, 59, 0.4));
 		.radius(5px);
 	} 
 }
-						
+	
 /*Contact*/
 
 .contact {
@@ -727,7 +729,6 @@ a {
 
 .contact_item:after {
 	.clear();
-	width: 900px;
 }
 
 .contact_column_text {
@@ -737,13 +738,13 @@ a {
 
 .text_input {
 	background: @white;
+	border: 1px solid #cccccc;
 	width: 100%;
 	height: 50px;
 	display: block;
 	
 	font: bold 17px @roboto;
 	color: @grey;
-	border: 1px solid #cccccc;
 	
 	margin-bottom: 30px;
 	padding: 15px 20px;
@@ -863,13 +864,11 @@ a {
 	float: left;
 	margin-left: 11%;
 }
-
 					
 /*Responsive*/
 
 @media screen and (max-width: 940px) {
 	.portfolio {
-		
 		.post:nth-of-type(3n+3) {
 			margin-right: 2%;
 		} 
@@ -877,6 +876,10 @@ a {
 }
 
 @media screen and (max-width: 768px) { 
+	.banner_wrapper {
+    	height: 550px;
+	}
+
 	.headline span {
 		font-size: 22px;
 	}
@@ -895,23 +898,44 @@ a {
 	}
 
 	.menu_list {
-		background: rgba(126,126,126, 0.8);
+		background: rgba(126,126,126, 0.9);
 		border: 2px solid #000;
 		display: none;
 	}
 
 	.menu_list_item {
 		display: block;
-		padding: 10px 0;
+		padding: 0;
 		border-bottom: 2px solid #000;
 	}
 
 	.menu_list_item:last-child {
 		border-bottom: none;
 	}
+
+	.menu_link {
+		display: block;
+		font-size: 18px;
+		padding: 16px 0;
+
+		&:hover {
+			.box-shadow(0, 0, 16px, 0px, rgba(56, 61, 59, 0.4));
+			background-color: lighten(#666, 20%);
+		}
+	}
 	
 	.banner_slogan {
 		margin-top: 170px;
+	}
+
+	.post {
+		width: 45%; 
+	}
+
+	.portfolio{
+		.post:nth-of-type(2n+2) {
+			margin-right: 0;
+		} 
 	}
 
 	.aboutus_image {
@@ -957,17 +981,6 @@ a {
 }
 
 @media screen and (max-width: 680px) { 
-
-	.post {
-		width: 45%; 
-	}
-
-	.portfolio{
-		.post:nth-of-type(2n+2) {
-			margin-right: 0;
-		} 
-	}
-
 	.right_article, .left_article {
 		margin: 0 0 0 5%;
 		float: right;
@@ -1011,9 +1024,13 @@ a {
 }
 
 @media screen and (max-width: 480px) { 
+	.block {
+	    padding: 50px 0;
+	}
+
 	.container {
 		.post {
-			width: 70%; 
+			width: 80%; 
 			margin: 0 0 25px;
 		}	
 	}
@@ -1021,7 +1038,7 @@ a {
 	.aboutus_image {
 		width: 100%;
 		margin-top: 10px;
-
+		
 		img {
 			.radius (0);
 		}
@@ -1035,10 +1052,14 @@ a {
 		margin: 0;
 		width: 100%;
 	}
-			
+	
+	.aboutus_text {
+		text-align: left;
+	}
+
 	.button {
 	  	height: 45px;
-		 width: 200px;
+		width: 100%;
 	}
 }	
 
